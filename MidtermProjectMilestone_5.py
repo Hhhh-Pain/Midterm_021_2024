@@ -14,6 +14,12 @@ capacitor = 0
 
 def low_pass_filter(Hz, CRN, Value):
     # 2(3.1415926535) or 2*pi to the 10 digits is = 6.283185307
+
+    # Formula is Hz(2pi)(Resistor)(Capacitor) = 1
+    # Isolate either Capacitor or Resistor gets you 
+    # 1/(Hz(2pi(Resistor or Capacitor))) = Capacitor or Resistor
+
+    # Value is the value of the resistor of the cap or resistor, in farads or ohms
     denom = (Hz)*(6.283185307)*(Value)
     if denom == 0:
         print("Your Hz frequency or your value for your capacitor or resistor cannot be 0")
